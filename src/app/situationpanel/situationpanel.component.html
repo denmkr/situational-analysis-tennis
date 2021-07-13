@@ -1,0 +1,16 @@
+<div class="panelwrapper">
+  <!--<svg id="situationcanvas" style="width:95%; height:5000px"></svg>-->
+  <div cdkDropList cdkDropListLockAxis="y" class="panel-container" (cdkDropListDropped)="drop($event)">
+	<div cdkDrag *ngFor="let block of situationBlocks; let i = index;" class="situation-block" [ngClass]="{'current': block.current}" (click)="onSituationBlockClick(i)" [id]="'situationContainer'+i">
+	  <div class="close-button" (click)="onCloseBlockButtonClick(i)"></div>
+	  <div class="shot"></div>
+	  <!--<div [id]="block.container">-->
+	  <!--
+	  <div>
+		<div>{{block.p1DepthCode}}</div>
+		<div>{{block.p1LRCode}}</div>
+	  </div>
+	  -->
+	</div>
+  </div>
+</div>

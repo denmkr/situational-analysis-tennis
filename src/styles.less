@@ -1,0 +1,549 @@
+@orange: #ff9933;
+@blue: #00a0e3;
+@blue-inactive: #66c3d0;
+@orange-inactive: #f7d5b4;
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* SVG COURT STYLES */
+
+svg.court-svg.empty-court g {
+  display: none;
+}
+
+svg.court-svg.highlight {
+	border-width: 4px;
+	box-sizing: content-box;
+}
+
+.tab-pane.active .shots-container.inview svg.court-svg,
+.tab-pane.active .shots-container.inview svg.court-svg path,
+.tab-pane.active .shots-container.inview svg.court-svg g,
+.tab-pane.active .shots-container.inview svg.court-svg circle,
+.tab-pane.active .shots-container.inview svg.court-svg rect {
+	transition: 0.2s linear;
+}
+
+.tab-pane.active .shot.inview svg.court-svg,
+.tab-pane.active .shot.inview svg.court-svg path,
+.tab-pane.active .shot.inview svg.court-svg g,
+.tab-pane.active .shot.inview svg.court-svg circle,
+.tab-pane.active .shot.inview svg.court-svg rect {
+  transition: 0.2s linear;
+}
+
+.tab-pane.active .owl-item.active svg.court-svg,
+.tab-pane.active .owl-item.active svg.court-svg path,
+.tab-pane.active .owl-item.active svg.court-svg g,
+.tab-pane.active .owl-item.active svg.court-svg circle,
+.tab-pane.active .owl-item.active svg.court-svg rect {
+  transition: 0.2s linear;
+}
+
+svg.court-svg g#real-court-grid {
+  opacity: 1;
+}
+
+svg.court-svg g#abs-court-grid {
+  opacity: 0;
+}
+
+svg.court-svg.small-size g#real-court-grid {
+	opacity: 0;
+}
+
+svg.court-svg.small-size g#abs-court-grid {
+  opacity: 1;
+}
+
+svg.court-svg .center-circle {
+	opacity: 0;
+}
+
+svg.court-svg.small-size .center-circle {
+	opacity: 1;
+}
+
+svg.court-svg .real-element {
+  display: block;
+  opacity: 1;
+}
+
+svg.court-svg .abs-element {
+  display: none;
+}
+
+svg.court-svg.small-size .abs-element {
+  display: block;
+}
+
+svg.court-svg.small-size .real-element {
+  display: none;
+}
+
+/*
+svg.court-svg .ball {
+  vector-effect: non-scaling-stroke;
+}
+*/
+
+/*
+svg.court-svg.small-size rect:not(#background) {
+	width: 90px;
+	height: 195px;
+}
+*/
+
+svg.court-svg:not(.small-size) rect#background {
+  /*transform: scale(1.33, 1) translate(-45px, 0);*/
+}
+
+svg rect.active {
+  stroke: #000;
+  stroke-width: 5px;
+}
+
+.blue.inactive {
+  fill: @blue-inactive;
+  background: @blue-inactive;
+}
+.blueCircle {
+  stroke: @blue;
+  stroke-width: 3px;
+  fill: none;
+}
+.blueFilledCircle {
+  stroke: @blue;
+  stroke-width: 3px;
+  fill: white;
+}
+.orangeFilledCircle {
+  stroke: @orange;
+  stroke-width: 3px;
+  fill: white;
+}
+.blueStrokeLine {
+  stroke: @blue;
+  stroke-width: 2px;
+}
+.orangeStrokeLine {
+  stroke: @orange;
+  stroke-width: 2px;
+}
+
+.backhand {
+  stroke-dasharray: 2 2;
+}
+.orangeCircle {
+  stroke: @orange;
+  stroke-width: 3px;
+  fill: none;
+}
+
+.orange.inactive {
+  fill: @orange-inactive;
+  background: @orange-inactive;
+}
+
+.orange {
+  fill: @orange;
+  background: @orange;
+  border-color: @orange;
+}
+
+.blue {
+  fill: @blue;
+  background: @blue;
+  border-color: @blue;
+}
+
+.orange-border {
+  border-color: @orange !important;
+}
+
+.blue-border {
+  border-color: @blue !important;
+}
+
+.border-2 {
+  border: 2px solid transparent;
+}
+
+
+.serve-block-container, .result-block-container {
+  width: 45px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+.serve-block {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  line-height: 0;
+}
+
+.serve-block .cell {
+  display: inline-block;
+  border: 2px solid @blue;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+.serve-block .cell:nth-child(2n+1) {
+  border-right-width: 1px;
+}
+
+.serve-block .cell:nth-child(2n) {
+  border-left-width: 1px;
+}
+
+.serve-block .cell:nth-child(1), .serve-block .cell:nth-child(2) {
+  border-bottom-width: 1px;
+}
+
+.serve-block .cell:nth-child(3), .serve-block .cell:nth-child(4) {
+  border-top-width: 1px;
+}
+
+.serve-block .cell .cell-block {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  line-height: 1.2;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  background: @blue;
+  border: 1px solid @blue;
+  margin: 1px;
+}
+
+.serve-block.blue .cell {
+  border-color: @blue;
+}
+
+.serve-block.orange .cell {
+  border-color: @orange;
+}
+
+.serve-block.solid .cell .cell-block {
+  color: #fff;
+}
+
+.serve-block.solid.blue .cell .cell-block {
+  background: @blue;
+  border: 1px solid @blue;
+}
+
+.serve-block.solid.orange .cell .cell-block {
+  background: @orange;
+  border: 1px solid @orange;
+}
+
+.serve-block.dashed .cell .cell-block {
+  background: #fff;
+  color: #111;
+}
+
+.serve-block.dashed.blue .cell .cell-block {
+  border: 1px dashed @blue;
+}
+
+.serve-block.dashed.orange .cell .cell-block {
+  border: 1px dashed @orange;
+}
+
+.result-circle {
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border: 3px solid transparent;
+  border-radius: 90px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.05;
+  background: transparent;
+  display: inline-block;
+  /*
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);*/
+}
+
+.result-circle.win:before {
+  content: "w";
+}
+
+.result-circle.error:before {
+  content: "e";
+}
+
+.result-circle {
+  color: #fff;
+}
+
+.result-circle.orange {
+  border-color: @orange;
+  background: @orange;
+}
+
+.result-circle.blue {
+  border-color: @blue;
+  background: @blue;
+}
+
+.result-circle.error {
+  background: #fff;
+  color: #111;
+}
+
+
+
+/* Animation */
+
+/* Sliding entrances */
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+.slideInUp.reverse {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+/* Sliding exits */
+@-webkit-keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+@-webkit-keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+@-webkit-keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+.slideOutUp.reverse {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+

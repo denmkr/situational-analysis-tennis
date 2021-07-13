@@ -1,0 +1,47 @@
+<div id="court-selection-container">
+	<div id="player-selection-panel">
+		<div class="selection-label">Shots:</div>
+		<div class="selection-buttons">
+			<div class="button p1" [class.active]="p1ShotsShown" (click)="onP1ButtonClick()">P1</div>
+			<div class="button p2" [class.active]="!p1ShotsShown" (click)="onP2ButtonClick()">P2</div>
+		</div>
+	</div>
+	<svg id="vis" width="100%" viewBox="0 0 568 264" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	    <g id="court" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+	        <g id="group" style="transform: translate(-91px, -88px)">
+	            <!--<rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="750" height="438"></rect>-->
+	            <path d="M222.5,120.5 L222.5,317.5" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+	            <!-- M376.373778 -->
+	            <path d="M375.0,89.5 L375.0,349" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+	            <path d="M375,68 L375,372" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square" transform="translate(375.000000, 219.500000) rotate(90.000000) translate(-375.000000, -219.500000) "></path>
+	            <path d="M96,216 L96,223" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square" transform="translate(96.000000, 219.500000) rotate(90.000000) translate(-96.000000, -219.500000) "></path>
+	            <path d="M654,216 L654,223" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square" transform="translate(654.000000, 219.500000) rotate(90.000000) translate(-654.000000, -219.500000) "></path>
+	            <!-- M528 -->
+	            <path d="M527,120 L527,317" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+	            <rect id="Rectangle" stroke="#000000" stroke-width="3" x="92.5" y="89.5" width="565" height="260"></rect>
+	            <rect id="Rectangle" stroke="#000000" stroke-width="3" x="92.5" y="118.5" width="565" height="199"></rect>
+	        </g>
+	    </g>
+	</svg>
+	<div class="checkbox-panel" #p1CheckBoxPanel>
+	    <!--<input type="checkbox" class="checkbox" id="p1CheckBox" [(ngModel)]="p1Check" (change)="checkP1Change()">-->
+	    <label for="p1CheckBox" class="checkbox-label">P1</label>
+	</div>
+	<div class="checkbox-panel" #p2CheckBoxPanel>
+	    <!--<input type="checkbox" class="checkbox" id="p2CheckBox" [(ngModel)]="p2Check" (change)="checkP2Change()">-->
+	    <label for="p2CheckBox" class="checkbox-label">P2</label>
+	</div>
+	<div class="add-panel" #addPanel (click)="onAddButtonClick()">+</div>
+	<!--
+	<div class="checkbox-panel" #ballCheckBoxPanel>
+	    <input type="checkbox" class="checkbox" id="ballCheckBox" [(ngModel)]="ballCheck" (change)="checkBallChange()">
+	    <label for="ballCheckBox" class="checkbox-label">Ball</label>
+	</div>
+-->
+	<!--
+	<div class="tooltip">
+	    <div>Win: {{win}}</div>
+	    <div>Lose: {{lose}}</div>
+	</div>
+	-->
+</div>

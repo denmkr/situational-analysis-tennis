@@ -1,0 +1,22 @@
+<div id="points-container">
+	<div class="shots-container" *ngFor="let point of situationPoints; let i = index;">
+		<div class="serve-block-container">
+			<div class="serve-block" [class.blue]="point.servePlayer == 1" [class.orange]="point.servePlayer == 2" [class.solid]="point.serveNumber == 1" [class.dashed]="point.serveNumber == 2">
+				<div class="cell"><div *ngIf="point.servePlayer == 2 && point.serveSide == 'Deuce'" class="cell-block">{{ point.serveNumber }}</div></div>
+				<div class="cell"><div *ngIf="point.servePlayer == 2 && point.serveSide == 'Ad'" class="cell-block">{{ point.serveNumber }}</div></div>
+				<div class="cell"><div *ngIf="point.servePlayer == 1 && point.serveSide == 'Ad'" class="cell-block">{{ point.serveNumber }}</div></div>
+				<div class="cell"><div *ngIf="point.servePlayer == 1 && point.serveSide == 'Deuce'" class="cell-block">{{ point.serveNumber }}</div></div>
+			</div>
+			<div *ngIf="point.leftAdd > 0">+{{ point.leftAdd }}</div>
+		</div>
+
+		<div class="shots-content" [id]="'shotsContainer'+i">
+			<!--<div class="shot" *ngFor="let j of [0,1,2,3,4,5,6,7,8];" [id]="'linearContainer'+i+''+j" [ngClass]="{'highlight': point.keyShotIndex == j}"></div>-->
+		</div>
+
+		<div class="result-block-container">
+			<div class="result-circle orange win" [class.orange]="point.winPlayer == 2" [class.blue]="point.winPlayer == 1" [class.win]="point.isWinPoint" [class.error]="!point.isWinPoint"></div>
+		    <div *ngIf="point.rightAdd > 0">+{{ point.rightAdd }}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark mb-3">
+  <a class="navbar-brand">SAT</a>
+  <div class="divider"></div>
+  <div class="btn-group">
+    <select [(ngModel)]="selectedMatch" class="custom-select" (change)="onSelectedMatchChange($event.target.value)">
+      <option value="null" disabled>Match</option>
+      <option [ngValue]="match" *ngFor="let match of matches;">Match {{ match }}</option>
+    </select>
+
+    <!--
+    <div class="dropdown">
+  	  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Match</button>
+  	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  	    <a class="dropdown-item" href="#" (click)="onMatchButtonClick('89')">Match 89</a>
+  	  </div>
+	  </div>
+  -->
+  </div>
+
+  <div id="main-menu">
+    <div class="btn-group">
+      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+      <!--<a routerLink="/linear-layout">-->
+        <li class="nav-item">
+          <a id="exploration-view-tab" data-toggle="pill" href="#exploration-view" role="tab" aria-controls="exploration-view" aria-selected="true">
+            <span class="material-icons btn btn-primary">fact_check</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="linear-layout-tab" data-toggle="pill" href="#linear-layout" role="tab" aria-controls="linear-layout" aria-selected="false">
+            <img src="../../assets/images/icon_linear_view.png"  class="material-icons btn btn-primary" height="38"/>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="nodelink-layout-tab" data-toggle="pill" href="#nodelink-layout" role="tab" aria-controls="nodelink-layout" aria-selected="false">
+            <img src="../../assets/images/icon_network_view.png"  class="material-icons btn btn-primary" height="38"/>          </a>
+        </li>
+        <li class="nav-item">
+          <a id="video-player-tab" data-toggle="pill" href="#video-player" role="tab" aria-controls="video-player" aria-selected="false">
+            <img src="../../assets/images/icon_video_view.png"  class="material-icons btn btn-primary" height="38"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <span (click)="onMiniCourtViewButtonClick()" >
+        <img src="../../assets/images/icon_abstract_court.png" class="material-icons btn btn-primary" height="38"/>
+      </span>
+      <span (click)="onFullCourtViewButtonClick()" >
+        <img src="../../assets/images/icon_real_court.png" class="material-icons btn btn-primary" height="38"/>
+      </span>
+    </div>
+  </div>
+  <app-matchinfo></app-matchinfo>
+  <app-nodelink-slider></app-nodelink-slider>
+  <app-winbar style="right:0;position:absolute;"></app-winbar>
+</nav>

@@ -1,0 +1,13 @@
+<div id="video-container">
+	<app-video (onCurrentTimeChange)="currentTimeChanged($event)" (onVideoPlayedPaused)="videoPlayedPaused($event)"></app-video>
+	<app-score-panel></app-score-panel>
+</div>
+<div id="control-container">
+	<div id="slider-container"></div>
+	<div id="video-controls-container">
+		<app-controls (onSpeedSliderChange)="speedSliderChanged($event)" (onControlButtonClick)="controlButtonClicked($event)"></app-controls>
+	</div>
+</div>
+<div id="situations-container">
+	<app-situations (onCurrentSituationChanged)="currentSituationChanged()" (onCurrentPointChange)="currentPointChanged($event)"></app-situations>
+</div>

@@ -1,0 +1,17 @@
+<div class="panelwrapper">
+	<div class="tab-content" id="pills-tabContent">
+		<div id="exploration-view" class="tab-pane fade show active" role="tabpanel" aria-labelledby="exploration-view-tab">
+			<app-exploration-view (onMaxKeyShotsNumberUpdate)="updateMaxKeyShotsNumber($event)" (onStandardSituationBlockClicked)="newExploredStandardSituation($event)" (onCustomSituationAdd)="newExploredCustomSituation($event)"></app-exploration-view>
+		</div>
+		<div id="linear-layout" class="tab-pane fade" role="tabpanel" aria-labelledby="linear-layout-tab">
+			<app-linear-layout></app-linear-layout>
+		</div>
+		<div id="nodelink-layout" class="tab-pane fade" role="tabpanel" aria-labelledby="nodelink-layout-tab">
+			<app-nodelink-layout></app-nodelink-layout>
+		</div>
+		<div id="video-player" class="tab-pane fade" role="tabpanel" aria-labelledby="video-player-tab">
+			<app-video-player></app-video-player>
+		</div>
+		<!--<router-outlet></router-outlet>-->
+	</div>
+</div>

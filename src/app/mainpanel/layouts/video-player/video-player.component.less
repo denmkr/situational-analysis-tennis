@@ -1,0 +1,59 @@
+#video-container {
+	height: calc(100% - 155px);
+	margin-bottom: 5px;
+	position: relative;
+}
+
+#control-container {
+	height: 40px;
+	margin-bottom: 5px;
+}
+
+#slider-container, #video-controls-container {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#video-controls-container {
+	margin-left: 10px;
+}
+
+/* Timeslider styles */
+
+#rectangles-group rect.active {
+	stroke-width: 4px;
+}
+
+#rectangles-group rect {
+	cursor: pointer;
+}
+
+#control-container .selection {
+	fill: #fff;
+	fill-opacity: 0.4;
+	stroke: none;
+}
+
+#control-container #brush .handle {
+	fill: green;
+	width: 4px;
+}
+
+#control-container #brush .handle:last-of-type {
+	fill: red;
+}
+
+#control-container #cur .handle {
+	stroke: #111;
+	stroke-width: 2px;
+	width: 4px;
+	fill: #fff;
+}
+
+#control-container #brush .handle-top {
+	fill: green;
+}
+
+#control-container #brush .handle-top:last-of-type {
+	fill: red;
+}

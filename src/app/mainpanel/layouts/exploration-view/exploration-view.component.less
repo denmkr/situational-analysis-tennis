@@ -1,0 +1,78 @@
+#exploration-view-container {
+	font-size: 0;
+	height: 100%;
+}
+
+#players-hits-container, #court-container {
+	display: inline-block;
+	vertical-align: top;
+	max-height: 100%;
+	height: 100%;
+	font-size: 15px;
+}
+
+#players-hits-container {
+	width: 65%;
+}
+
+#court-container {
+	width: 35%;
+}
+
+#players-hits-container .players-hits-container-flex {
+	width: 100%;
+	max-height: 96%;
+	display: flex;
+}
+
+.players-hits-container-flex .hits-container {
+	max-height: 100%;
+	display: flex;
+	flex-flow: column;
+	vertical-align: top;
+	width: 50%;
+}
+
+#players-hits-container .hits-container .hits-block-content {
+	overflow-y: auto;
+}
+
+#players-hits-container .hits-container .hits-block-content > .situation-block {
+	display: inline-block;
+	vertical-align: top;
+	/*border: 1px solid #333;*/
+	margin: 5px;
+
+	cursor: pointer;
+}
+
+#court-container {
+	width: 35%;
+	overflow: auto;
+}
+
+#court-container .tooltip {
+	position: fixed;
+	z-index: 100;
+	background: #fff;
+	border: 2px solid steelblue;
+	border-radius: 6px;
+	padding: 15px;
+	display: none;
+	pointer-events: none;
+}
+
+#court-container .checkbox {
+	width: 18px;
+	height: 18px;
+}
+
+#court-container .checkbox-label {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+#court-container .checkbox-panel {
+	position: absolute;
+}

@@ -1,0 +1,108 @@
+@import "../../../LayoutConstants.less";
+@SelectedBorderColor: #111;
+
+#nodelink-container {
+	max-height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	position: relative;
+}
+
+#edges-container {
+	position: relative;
+	top: -45px;
+	left: -@LeftNavWidth;
+	z-index: 1;
+
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#nodes-container {
+	z-index: 2;
+	position: relative;
+}
+
+#nodelink-container .column-container {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#nodelink-container .column-container .shot {
+	display: block;
+	/*min-width: 82px;*/
+  	/*min-height: 143px;*/
+	border: 2px solid transparent;
+	box-sizing: border-box;
+	transition: opacity 0.05s linear;
+}
+
+#nodelink-container .column-container .shot.main-selected {
+	border-color: @SelectedBorderColor;
+}
+
+#nodelink-container .serve-block-container {
+	min-width: 80px;
+	min-height: 96px;
+	max-height: 96px;
+	display: block;
+	padding: 27px 0;
+}
+
+#nodelink-container .result-block-container {
+	min-width: 80px;
+	max-height: 96px;
+	min-height: 96px;
+	padding: 33px 0;
+	display: block;
+}
+
+#nodelink-container .serve-column-container {
+	display: inline-block;
+	vertical-align: top;
+	min-width: 80px;
+}
+
+#nodelink-container .result-column-container {
+	display: inline-block;
+	vertical-align: top;
+	min-width: 80px;
+}
+
+#nodelink-container .column-container .shot.disabled,
+#edges-container .edge.disabled {
+	opacity: 0.2;
+}
+
+#nodelink-container .column-container .shot svg g.elements .ball.disabled,
+#nodelink-container .column-container .shot svg g.elements .player.disabled,
+#nodelink-container .column-container .shot svg g.elements line.disabled,
+#nodelink-container .column-container .shot svg g.circle circle.disabled {
+	opacity: 0;
+}
+
+.edge.selected svg > g > use:first-child {
+	stroke: steelblue !important;
+}
+
+.edge.highlighted svg > g > use:first-child {
+	stroke: rgb(214, 214, 60) !important;
+}
+
+.edge.width1 svg > defs > use {
+	stroke-width: 1.5px;
+}
+.edge.width2 svg > defs > use {
+	stroke-width: 3px;
+}
+.edge.width3 svg > defs > use {
+	stroke-width: 4.5px;
+}
+.edge.width4 svg > defs > use {
+	stroke-width: 6px;
+}
+.edge.width5 svg > defs > use {
+	stroke-width: 7.5px;
+}

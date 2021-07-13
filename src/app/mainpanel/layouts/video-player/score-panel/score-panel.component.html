@@ -1,0 +1,24 @@
+<div id="score-panel">
+	<div class="column">
+		<div class="serve">
+			<div class="ball-icon" *ngIf="p1Serve"></div>
+		</div>
+		<div class="serve">
+			<div class="ball-icon" *ngIf="!p1Serve"></div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="name">{{ p1Name }}</div>
+		<div class="name">{{ p2Name }}</div>
+	</div>
+	<div class="column" id="sets-column" *ngIf="games.length > 0">
+		<div class="set-column" *ngFor="let game of games;">
+			<div class="game">{{ game.p1 }}</div>
+			<div class="game">{{ game.p2 }}</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="point">{{ p1Point }}</div>
+		<div class="point">{{ p2Point }}</div>
+	</div>
+</div>

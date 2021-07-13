@@ -1,0 +1,33 @@
+@import "../LayoutConstants.less";
+
+.panelwrapper {
+  height: @FooterBarHeight;
+  width: calc(100% - @LeftNavWidth - @StatPanelWidth);
+  overflow-x: auto;
+  bottom: 0;
+  left: @LeftNavWidth;
+  position: absolute;
+  background: white;
+}
+
+.KeyFont {
+  font-family: Verdana;
+  font-size: 13px;
+}
+
+.KeyFontXLarge {
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+svg {
+  height: @FooterBarHeight;
+}
+
+#keypanel-container {
+  min-width: 950px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: initial;
+}

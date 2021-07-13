@@ -1,0 +1,173 @@
+@orange: #ff9933;
+@blue: #00a0e3;
+@blue-inactive: #66c3d0;
+@orange-inactive: #f7d5b4;
+
+#court-selection-container .selection {
+	background: rgba(46, 115, 252, 0.11);
+	border-radius: 0.1em;
+	border: 2px solid black;
+}
+
+#court-selection-container .filtered {
+	opacity: 0.5 !important;
+}
+
+#court-selection-container .selected {
+	opacity: 1 !important;
+}
+
+#court-selection-container .disable {
+	fill-opacity: 1;
+}
+
+#court-selection-container .selection {
+	stroke: none;
+}
+
+#court-selection-container .selection.bordered {
+	stroke: #111;
+	stroke-width: 2px;
+}
+
+/*
+.position {
+	transition: 0.1s ease-out !important;
+}
+*/
+
+#court-selection-container .hide {
+	display: none;
+}
+
+#court-selection-container svg {
+	shape-rendering: geometricPrecision;
+}
+
+.tooltip {
+	position: fixed;
+	z-index: 100;
+	background: #fff;
+	border: 2px solid steelblue;
+	border-radius: 6px;
+	padding: 15px;
+	display: none;
+	pointer-events: none;
+}
+
+.checkbox {
+	width: 18px;
+	height: 18px;
+}
+
+.checkbox-label {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.checkbox-panel {
+	position: absolute;
+}
+
+.add-panel {
+	text-align: center;
+	display: inline-block;
+	padding: 0 10px;
+	/* width: 40px; */
+	font-size: 32px;
+	border: 2px solid #333;
+	/* line-height: 20px; */
+	cursor: pointer;
+}
+
+#court-selection-container {
+	text-align: center;
+	/*height: 100%;*/
+}
+
+#player-selection-panel {
+	text-align: right;
+}
+
+.selection-label {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.selection-buttons {
+	font-size: 0;
+	text-align: right;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.selection-buttons .button {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 14px;
+	border: 1px solid #333;
+	color: #333;
+	background: #fff;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+.selection-buttons .button:first-child {
+	border-right: none;
+}
+
+.selection-buttons .button.active {
+	color: #fff;
+}
+
+.selection-buttons .button.p1.active {
+	background: @blue;
+}
+
+.selection-buttons .button.p2.active {
+	background: @orange;
+}
+
+.box-panel {
+	width: 120px;
+	height: 120px;
+	fill-opacity: 0.1;
+}
+
+.box-panel.p1 {
+	fill: @blue;
+}
+
+.box-panel.p2 {
+	fill: @orange;
+}
+
+#positions-1 .selection {
+	fill: @blue-inactive;
+	fill-opacity: 1;
+}
+
+#positions-1 .selection.bordered {
+	fill: @blue;
+	fill-opacity: 0.3;
+}
+
+#positions-2 .selection {
+	fill: @orange-inactive;
+	fill-opacity: 1;
+}
+
+#positions-2 .selection.bordered {
+	fill: @orange;
+	fill-opacity: 0.3;
+}
+
+#positions-1 .selection.disable {
+	fill-opacity: 1;
+}
+
+#positions-2 .selection.disable {
+	fill-opacity: 1;
+}

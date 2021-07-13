@@ -1,0 +1,85 @@
+<div class="panelwrapper">
+  <div id="keypanel-container">
+    <div>
+      <svg width="60">
+        <text x="5" y="36" class="KeyFontXLarge" >Key:</text>
+      </svg>
+    </div>
+    <div>
+      <svg width="60">
+        <circle cx="30" cy="30" r="25" fill="#BBB" ></circle>
+        <text x="20" y="28" fill="#000" >{{this.shotCounter}}</text>
+        <text x="18" y="45" fill="#000" >pts</text>
+      </svg>
+    </div>
+    <!--player 1 and 2 hit/receive -->
+    <div>
+      <svg width="140" style="padding-top:2px;">
+        <rect x="5" y="5" height="10" width="10" class="blue" style="stroke:black; stroke-width: 1px"></rect>
+        <text x="17" y="15" fill="#000">/</text>
+        <rect x="24" y="5" height="10" width="10" class="blue inactive" ></rect>
+        <text x="37" y="15" class="KeyFont">P1 hit/receive</text>
+        <rect x="5" y="23" height="10" width="10" class="orange" style="stroke:black; stroke-width: 1px"></rect>
+        <text x="17" y="33" fill="#000">/</text>
+        <rect x="24" y="23" height="10" width="10" class="orange inactive" ></rect>
+        <text x="37" y="33" class="KeyFont">P2 hit/receive</text>
+        <text x="5" y="50" class="KeyFont">S/R serve/return</text>
+
+      </svg>
+    </div>
+    <!--Middle checkbox panel section -->
+    <div width="310" style="background-color: lightgray" >
+      <input id="chkShowTrajectory" type="checkbox" style="height:25px; width:25px; margin-top: 18px" [checked]="showTrajectory" (change)="showTrajectory=!showTrajectory"/>
+      <!--bounces and volleys -->
+      <svg width="310" style="margin-top: 8px;height: 40px;vertical-align: top;padding-top:0px;">
+        <circle cx="12" cy="10" r="6" class="blue" ></circle>
+        <text x="19" y="15" fill="#000">/</text>
+        <circle cx="32" cy="10" r="6" class="orange" ></circle>
+        <text x="42" y="15" class="KeyFont">Bounce</text>
+        <circle cx="12" cy="32" r="6" class="blue" ></circle>
+        <circle cx="12" cy="32" r="4" fill="white" ></circle>
+        <text x="19" y="38" fill="#000">/</text>
+        <circle cx="32" cy="32" r="6" class="orange" ></circle>
+        <circle cx="32" cy="32" r="4" fill="white" ></circle>
+        <text x="42" y="37" class="KeyFont">Volley</text>
+        <!--backhands and forehands -->
+        <line x1="106" y1="18" x2="114" y2="5" class="blueStrokeLine backhand" ></line>
+        <line x1="114" y1="18" x2="122" y2="5"  class="orangeStrokeLine backhand"></line>
+        <text x="130" y="15" class="KeyFont">Backhand (or 2nd serve)</text>
+        <line x1="106" y1="39" x2="114" y2="26" class="blueStrokeLine"></line>
+        <line x1="114" y1="39" x2="122" y2="26" class="orangeStrokeLine"></line>
+        <text x="130" y="38" class="KeyFont">Forehand (or 1st serve)</text>
+      </svg>
+    </div>
+    <!--P1/P2 wins point section -->
+    <div width="110">
+      <svg width="110" style="padding-top:10px;">
+        <!-- P1 and P2 Labels -->
+        <text x="5" y="15" class="KeyFont blue">P1 wins point</text>
+        <text x="5" y="38" class="KeyFont orange">P2 wins point</text>
+      </svg>
+    </div>
+    <!--point outcomes graphics -->
+    <div width="80">
+      <svg width="80" style="padding-top:8px;">
+        <circle cx="10" cy="10" r="10" class="blue" ></circle>
+        <text x="4" y="14" class="KeyFont" fill="white">w</text>
+        <circle cx="10" cy="35" r="10" class="orange" ></circle>
+        <text x="4" y="39" class="KeyFont" fill="white">w</text>
+        <text x="21" y="15" class="KeyFont">/</text>
+        <circle cx="39" cy="10" r="9" class="blueFilledCircle" ></circle>
+        <text x="34" y="14" class="KeyFont" fill="black">e</text>
+        <circle cx="39" cy="35" r="9" class="orangeFilledCircle" ></circle>
+        <text x="34" y="39" class="KeyFont" fill="black">e</text>
+        <text x="21" y="39" class="KeyFont">/</text>
+      </svg>
+    </div>
+    <!--point outcomes text -->
+    <div width="160" >
+      <svg width="160" style="padding-top:10px;">
+        <text x="4" y="15" class="KeyFont" >P1 winner / P2 error</text>
+        <text x="4" y="38" class="KeyFont" >P2 winner / P1 error</text>
+      </svg>
+    </div>
+  </div>
+</div>

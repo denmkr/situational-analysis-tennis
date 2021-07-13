@@ -1,0 +1,38 @@
+@import "../LayoutConstants.less";
+.panelwrapper {
+  height: calc(100% - @HeaderBarHeight - @FooterBarHeight);
+  width: calc(100% - @LeftNavWidth - @StatPanelWidth);
+  min-width: 250px;
+  top: @HeaderBarHeight;
+  left: @LeftNavWidth;
+  position: absolute;
+  border:none;
+  background: #fff;
+  border-bottom: solid;
+  /*padding: 10px 5px;*/
+}
+
+#pills-tabContent {
+	max-height: 100%;
+	display: inline;
+}
+
+#pills-tabContent > .tab-pane {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+#pills-tabContent > .tab-pane:not(#nodelink-layout) {
+  padding: 10px;
+}
+
+#pills-tabContent > .active {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  /*overflow: auto;*/
+}

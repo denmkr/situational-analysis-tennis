@@ -1,0 +1,32 @@
+<div id="situations-content" *ngIf="situationPoints.length > 0">
+	<div class="serve-block-container">
+		<!-- [ngClass]="[servePlayer == 1 ? 'blue' : 'orange', serveNumber == 1 ? 'solid' : 'dashed']" -->
+		<div class="serve-block" [class.blue]="servePlayer == 1" [class.orange]="servePlayer == 2" [class.solid]="serveNumber == 1" [class.dashed]="serveNumber == 2">
+			<div class="cell"><div *ngIf="servePlayer == 2 && serveSide == 'Deuce'" class="cell-block">{{ serveNumber }}</div></div>
+			<div class="cell"><div *ngIf="servePlayer == 2 && serveSide == 'Ad'" class="cell-block">{{ serveNumber }}</div></div>
+			<div class="cell"><div *ngIf="servePlayer == 1 && serveSide == 'Ad'" class="cell-block">{{ serveNumber }}</div></div>
+			<div class="cell"><div *ngIf="servePlayer == 1 && serveSide == 'Deuce'" class="cell-block">{{ serveNumber }}</div></div>
+		</div>
+		<div *ngIf="leftAdd > 0">+{{ leftAdd }}</div>
+	</div>
+	<!-- Slider of points (situations) -->
+	<div id="points-container">
+		<owl-carousel-o #owlSits (changed)="currentSituationChanged($event)" [options]="customOptions">
+			<ng-container *ngFor="let point of situationPoints; let j = index;">
+		    	<ng-template carouselSlide [id]="'slide'+j">
+		    		<div class="shots-container" [id]="'container'+j"></div>
+		    	</ng-template>  
+	    	</ng-container>
+	  	</owl-carousel-o>
+	</div>
+	<div class="result-block-container">
+		<div class="result-circle" [class.orange]="winPlayer == 2" [class.blue]="winPlayer == 1" [class.win]="isWinPoint" [class.error]="!isWinPoint"></div>
+		<div *ngIf="rightAdd > 0">+{{ rightAdd }}</div>
+	</div>
+	<div class="nav-panel">
+		<div class="nav-arrow arrow-up" (click)="owlSits.prev()"></div>
+		<div>{{ currentSituationNumber }} / {{ situationsNumber }}</div>
+	  	<div class="nav-arrow arrow-down" (click)="owlSits.next()"></div>
+	</div>
+	
+</div>

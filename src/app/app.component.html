@@ -1,0 +1,11 @@
+<!-- Menu bar --> 
+<app-topbar (onFullCourtModeChanged)="courtModeChanged($event)" (onMatchChanged)="selectedMatchChanged($event)"></app-topbar>
+
+<!-- Main content container -->
+<div id="maincontent">
+  <app-situationpanel (onCurrentSituationChanged)="currentSituationChanged($event)"></app-situationpanel>
+  <app-spectrumpanel></app-spectrumpanel>
+  <app-statisticspanel></app-statisticspanel>
+  <app-keypanel></app-keypanel>
+  <app-mainpanel (onMaxKeyShotsNumberUpdate)="updateMaxKeyShotsNumber($event)" (newStandardSituationExplored)="newStandardSituationExplored($event)" (newCustomSituationExplored)="newCustomSituationExplored($event)"></app-mainpanel>
+</div>

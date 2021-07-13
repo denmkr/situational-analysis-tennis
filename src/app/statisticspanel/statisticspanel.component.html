@@ -1,0 +1,31 @@
+<div class="panelwrapper">
+	<div class="panel-top">
+		<div class="panel-title">Statistics Panels</div>
+		<div class="settings-button" (click)="toggleSettingsWindow()">...</div>
+		<div class="settings-window" [ngClass]="{'active': settingsWindowActive}">
+			<div class="close-button" (click)="toggleSettingsWindow()"></div>
+			<div *ngFor="let block of statisticsBlocks">
+				<input [attr.id]="block.id" [checked]="block.active" (change)="checkBoxChangeClick(block)" type="checkbox"/>
+				<label [attr.for]="block.id">{{ block.name }}</label>
+			</div>
+		</div>
+	</div>
+	<div cdkDropList cdkDropListLockAxis="y" class="panel-container" (cdkDropListDropped)="drop($event)">
+		<div cdkDrag *ngFor="let block of newBlocks" class="statistics-block">
+			<div class="chart" [ngClass]="{'visible': true}">
+				<div class="close-button" (click)="closeBlockClick(block)"></div>
+				<div [id]="block.container">
+					<div *ngFor="let val of block">{{ val }}</div>
+				</div>
+			</div>
+		</div>
+
+		<div cdkDrag *ngFor="let block of statisticsBlocks" class="statistics-block">
+			<div class="chart" [ngClass]="{'visible': block.active}">
+				<div class="close-button" (click)="closeBlockClick(block)"></div>
+				<div [id]="block.container"></div>
+				<div class="block-label">{{ block.name }}</div>
+			</div>
+		</div>
+	</div>
+</div>

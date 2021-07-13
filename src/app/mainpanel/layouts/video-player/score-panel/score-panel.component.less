@@ -1,0 +1,64 @@
+#score-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+  text-align: right;
+  border: 2px solid transparent;
+}
+
+.column#sets-column {
+  border: 2px solid #fff;
+  padding: 0 5px;
+}
+
+.set-column {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.set-column:last-child {
+  margin-right: 0px;
+}
+
+.column .serve .ball-icon {
+  background: yellow;
+  width: 8px;
+  height: 8px;
+  border-radius: 90px;
+  display: inline-block;
+  border: 1px solid #333;
+}
+
+.column .serve {
+  vertical-align: middle;
+  line-height: 20px;
+  height: 24px;
+}
+
+#score-panel .column * {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.column:first-child {
+  margin-right: 8px;
+}
+
+.column:nth-child(2) {
+	margin-right: 10px;
+  text-align: left;
+}
+
+.column:last-child {
+	margin-left: 3px;
+}

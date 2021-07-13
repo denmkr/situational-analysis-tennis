@@ -1,0 +1,32 @@
+<div id="exploration-view-container">
+    <div id="players-hits-container">
+      <div class="players-hits-container-flex">
+        <div class="hits-container">
+        	<div class="hits-block-top">
+        	  <div class="hits-title">P1 Hits</div>
+        	</div>
+        	<div class="hits-block-content" id="p1-situation-blocks">
+        		<!--
+        	  <div class="situation-block" *ngFor="let situation of p1StandardSituations;" (click)="onSituationBlockClick(situation)">
+        	  	<div>{{situation.p1DepthCode}}</div>
+        	  	<div>{{situation.p1LRCode}}</div>
+        	  	<div>{{situation.p2DepthCode}}</div>
+        	  	<div>{{situation.p2LRCode}}</div>
+        	  </div>
+        	-->
+        	</div>
+        </div>
+        <div class="hits-container">
+        	<div class="hits-block-top">
+        	  <div class="hits-title">P2 Hits</div>
+        	</div>
+          <!-- Situations container -->
+        	<div class="hits-block-content" id="p2-situation-blocks"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="court-container">
+      <app-court-selection (onCustomSituationAdd)="addCustomSituation($event)"></app-court-selection>
+    </div>
+</div>

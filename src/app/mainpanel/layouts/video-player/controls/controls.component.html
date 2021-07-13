@@ -1,0 +1,19 @@
+<div id="controls-container">
+	<span class="material-icons" (click)="onToStartClick()">skip_previous</span>
+	<span class="material-icons" (click)="onToSectorStartClick()">fast_rewind</span>
+	<span class="material-icons" (click)="onPlayClick()" *ngIf="isPlayButtonActive; else pauseTemplate">play_arrow</span>
+
+	<ng-template #pauseTemplate>
+		<span class="material-icons" (click)="onPauseClick()">pause</span>
+	</ng-template>
+
+	<span class="material-icons" (click)="onToNextSectorClick()">fast_forward</span>
+	<span class="material-icons" (click)="onToEndClick()">skip_next</span>
+
+	<span class="material-icons" [class.active]="isLoopButtonActive" id="loop-button" (click)="onLoopClick()">loop</span>
+
+	<div id="speed-slider">
+		<mat-slider min="0.25" max="2" step="0.25" value="1" (input)="onSpeedSliderMoved($event)" (change)='onSpeedSliderValueChange($event)'></mat-slider>
+		<div id="speed-slider-label">{{ speedSliderValue }}x</div>
+	</div>
+</div>

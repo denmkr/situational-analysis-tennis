@@ -1,0 +1,6 @@
+<div id="nodelink-slider-container">
+	<div id="nodelink-slider">
+		<mat-slider min="1" max="10" step="1" value="1" (input)="onNodelinkSliderMoved($event)" (change)='onNodelinkSliderValueChange($event)'></mat-slider>
+		<div id="nodelink-slider-label">Weight: {{ nodelinkSliderValue }}</div>
+	</div>
+</div>

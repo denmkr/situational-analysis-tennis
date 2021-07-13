@@ -1,0 +1,24 @@
+<div id="nodelink-container">
+	<div id="edges-container"></div>
+	<div id="nodes-container">
+		<div class="column-container" *ngFor="let column of situationColumns; let i = index;">
+			<!--
+			<div class="shot" *ngFor="let situation of column; let j = index;" [id]="'nodeSituation'+j">
+				{{ situation.standardSituationCode }}
+			</div>
+			-->
+			<div class="shots-content" [id]="'nodesContainer'+i">
+				<!--<div class="shot" *ngFor="let j of [0,1,2,3,4,5,6,7,8];" [id]="'linearContainer'+i+''+j" [ngClass]="{'highlight': point.keyShotIndex == j}"></div>-->
+			</div>
+		</div>
+
+		<!--
+		<div class="result-column-container">
+			<div class="result-block-container" *ngFor="let outcome of outcomeColumn; let i = index;">
+				<div class="result-circle orange win" [class.orange]="outcome.winPlayer == 2" [class.blue]="outcome.winPlayer == 1" [class.win]="outcome.isWinPoint" [class.error]="!outcome.isWinPoint" [id]="'resultBlock'+i"></div>
+			    <div *ngIf="outcome.rightAdd > 0">+{{ outcome.rightAdd }}</div>
+			</div>
+		</div>
+		-->
+	</div>
+</div>
